@@ -10,7 +10,6 @@ u = [0, h**(l+1)]
 zmax = 0
 n = 0
 epsilion = n + (3/2)
-while (n < 4)
-	while (z < zmax)
-
-	n + 1
+while n < 4:
+	if z <= zmax:
+		n = n + 1

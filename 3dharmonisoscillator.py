@@ -3,12 +3,12 @@
 #michael chiong
 #emilee conard
 
+h = 0.01
+l = 0
 z = [0, h]
 u = [0, h**(l+1)]
 zmax = 0
-h = .01
 n = 0
-l = 0
 epsilion = n + (3/2)
 while (n < 4)
 	while (z < zmax)

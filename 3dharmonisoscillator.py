@@ -3,14 +3,39 @@
 #michael chiong
 #emilee conard
 
-h = 0.01
-l = 0
-z = [0, h]
-u = [0, h**(l+1)]
-zmax = 0
-n = 0
-epsilion = n + (3/2)
-while (n < 4)
-	while (z < zmax)
+import math
+import matplotlib.pyplot as pyplot
 
-	n + 1
+zmax = 4 # iterations
+n=1
+l=0
+h = 0.01
+while l<8:
+  epsilon = l+(3/2) # n+1/2
+  u0=0
+  u1=h**(l+1)
+  z=h
+  vz=z*z/4
+  zList=[0,h]
+  uList=[0,h**(l+1)]
+
+  while z<zmax:
+    z=z+h
+    u2=(2+h*h*l*(l+1)*z**(-2)+vz-epsilon)*u1-u0
+    
+    # Save for plotting
+    zList.append(z)
+    uList.append(u2)
+
+  # Shift for next iteration
+    u0= u1
+    u1= u2
+    l=l+1
+    n=n+1
+
+
+# Plot
+def square(uList):
+  return[i**2 for i in uList]
+pyplot.plot(zList, square(uList))
+pyplot.show()

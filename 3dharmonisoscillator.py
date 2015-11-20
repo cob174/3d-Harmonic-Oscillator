@@ -29,7 +29,7 @@ for l in range(0,6):
 
   while z<zmax:
     
-    u2=(2+h*h*l*(l+1)*z**(-2)+vz-epsilon)*u1-u0
+    u2=(2+h*h*(l*(l+1)*z**(-2)+(z**2/4)-epsilon))*u1-u0
     
     # Save for plotting
     zList.append(z)
